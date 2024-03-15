@@ -1,10 +1,13 @@
-@font-face {
-  font-family: "Raydis";
-  src: url("./fonts/Raydis/RAYDIS.ttf");
-  src: url("./fonts/Raydis/RAYDIS-Bold.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+$color-background-light: #f8ebd9;
+$color-background-dark: #1d1842;
+
+// @font-face {
+//   font-family: "Raydis";
+//   src: url("./fonts/Raydis/RAYDIS.ttf");
+//   src: url("./fonts/Raydis/RAYDIS-Bold.woff") format("woff");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 @font-face {
   font-family: "Inter";
@@ -14,139 +17,411 @@
   font-style: normal;
 }
 
-@keyframes text-clip {
-  from {
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-  }
-  to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-} 
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("./fonts/Inter/Inter-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
-$color-light: #f9ebd7;
+// @keyframes text-clip {
+//   from {
+//     clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+//   }
+//   to {
+//     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+//   }
+// } 
+
+// $color-light: #f9ebd7;
 
 html, 
 body {
-  // position: relative;
-  width: 100%;
   margin: 0;
-  // min-width: 320px;
+  background-color: $color-background-light;
   // font-size: 10px;
-  // font-family: "Georgia";
-  // scroll-behavior: smooth;
-  // overflow-x: hidden;
-  background-color: $color-light;
+}
+
+.section_listPeople {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.list__entrants,
+.list__judge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.list__entrants {
+  padding: 14px 60px 10px 10px;
+  flex-grow: 2;
+}
+
+.list__judge {
+  position: relative;
+  padding: 14px 10px 10px 60px;
+  background-color: $color-background-dark;
+  flex-grow: 1;
+}
+ 
+.img-mirror {
+  position: absolute;
+  height: 100%;
+  top:0;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.card-entrants,
+.card-judge {
+  width: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 5px;
+  font-family: "Inter";
+  font-size: 0.9vw;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.card-entrants {
+  background-color: $color-background-dark;
+  color: $color-background-light;
+}
+
+.card-judge {
+  background-color: $color-background-light;
+  color: $color-background-dark;
+}
+
+.card__text {
+  margin: 0;
+}
+
+.card-entrants:hover,
+.card-judge:hover {
+  cursor: pointer;
+}
+
+.card-entrants.delete,
+.card-judge.delete {
+  background-color: #403F3F;
+  color: #a6a6a6;
 }
 
 
-.main {
+//группы
+
+.section_groups {
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.group {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100vh;
+.section_groups__img {
   width: 100%;
 }
 
-.title {
-  width: 100%;
-  text-align: center;
-  font-family: "Raydis";
-}
-
-.entrants,
-.judge {
-  flex-grow: 1;
-  height: 90%;
-}
-
-.entrants {
+.wrapper-section {
   display: flex;
-  flex-wrap: wrap;
-}
-
-.subgroup {
   flex-grow: 1;
-  height: 90%;
 }
 
-.wrapper-name {
-  margin: 15px;
-  padding: 15px;
-  background-color: rgba($color: #fffafa, $alpha: 0.4);
-  color: transparent;
-  cursor: pointer;
+.section_entrants {
+  margin: 55px 100px 65px 100px;
+  display: flex;
+  flex-grow: 1;
 }
 
-.text-name {
-  margin: 0;
-  font-family: "Raydis";
-  font-size: 28px;
+.section_judge {
+  padding: 15px 100px 65px 100px;
+  position: relative;
+  background-color: $color-background-dark;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.wrapper-name:nth-child(odd) {
-  text-align: right;
-}
-
-.wrapper-name.open {
-  color: black;
-  background-color: $color-light;
-  animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
-  cursor: auto;
-}
-
-.button {
-  margin: auto;
-  position: absolute;
-  height: 30px;
-  width: 100px;
-  top: 0; left: 0; bottom: 0; right: 0;
-  cursor: pointer;
-}
-
-.button.hide {
-  display: none;
-}
-
-.loader {
-  display: none;
-  width: 64px;
-  height: 64px;
-  position: absolute;
-  margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0;
-  animation: rotate 1.5s ease-in infinite alternate;
-}
-
-.loader.open {
-  display: block;
-}
-
-.loader::before {
-  content: '';
+.section_groups__img-mirror {
   position: absolute;
   left: 0;
-  bottom: 0;
-  color: #FF3D00;
-  background: currentColor;
-  width: 64px;
-  height: 32px;
-  border-radius: 0 0 50px 50px;
-}
-.loader::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  background: #FFF;
-  width: 8px;
-  height: 64px;
-  animation: rotate 1.2s linear infinite alternate-reverse;
+  transform: translateX(-50%);
+  // height: 100%;
 }
 
-@keyframes rotate {
-  100% { transform: rotate(360deg)}
+.wrapper_subgroup-1,
+.wrapper_subgroup-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.wrapper_subgroup-1 {
+  padding: 0 40px 20px 0;
+  border-bottom: 4px solid $color-background-dark;
+  border-right: 4px solid $color-background-dark;
+}
+
+.wrapper_subgroup-2 {
+  padding: 20px 0 0 40px;
+  border-top: 4px solid $color-background-dark;
+}
+
+.wrapper-judge {
+  padding-top: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  row-gap: 0;
+  align-content: space-between;
+}
+
+.section__judge-name {
+  align-self: center;
+  object-fit: contain;
+}
+
+.card-entrant {
+  width: 400px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-background-dark;
+  color: $color-background-light;
+  font-family: "Inter-Bold";
+  font-size: 0.9vw;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.card-entrant p {
+  transform: scaleY(1.2);
+}
+
+.section_groups .card-judge {
+  height: 125px;
+  width: 285px;
+  flex-grow: 0;
+  background-color: $color-background-light;
+  color: $color-background-dark;
+  font-family: "Inter";
+  font-size: 1.2vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section_groups .card__closed {
+  color: transparent;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.wrapper_subgroup-1 .card__closed.card-1 {
+  background-image: url("./img/groups/subgroup/card__closed-1.svg");
+}
+
+.wrapper_subgroup-1 .card__closed.card-2 {
+  background-image: url("./img/groups/subgroup/card__closed-2.svg");
+}
+
+.wrapper_subgroup-1 .card__closed.card-3 {
+  background-image: url("./img/groups/subgroup/card__closed-3.svg");
+}
+
+.wrapper_subgroup-1 .card__closed.card-4 {
+  background-image: url("./img/groups/subgroup/card__closed-4.svg");
+}
+
+.wrapper_subgroup-1 .card__closed.card-5 {
+  background-image: url("./img/groups/subgroup/card__closed-5.svg");
+}
+
+.wrapper_subgroup-2 .card__closed.card-1 {
+  background-image: url("./img/groups/subgroup/card__closed-6.svg");
+}
+
+.wrapper_subgroup-2 .card__closed.card-2 {
+  background-image: url("./img/groups/subgroup/card__closed-7.svg");
+}
+
+.wrapper_subgroup-2 .card__closed.card-3 {
+  background-image: url("./img/groups/subgroup/card__closed-8.svg");
+}
+
+.wrapper_subgroup-2 .card__closed.card-4 {
+  background-image: url("./img/groups/subgroup/card__closed-9.svg");
+}
+
+.wrapper_subgroup-2 .card__closed.card-5 {
+  background-image: url("./img/groups/subgroup/card__closed-10.svg");
+}
+
+.wrapper-judge .card__closed.card-1 {
+  background-image: url("./img/groups/judge/card-closed-1.svg");
+}
+
+.wrapper-judge .card__closed.card-2 {
+  background-image: url("./img/groups/judge/card-closed-2.svg");
+}
+
+.wrapper-judge .card__closed.card-3 {
+  background-image: url("./img/groups/judge/card-closed-3.svg");
+}
+
+.wrapper-judge .card__closed.card-4 {
+  background-image: url("./img/groups/judge/card-closed-4.svg");
+}
+
+.wrapper-judge .card__closed.card-5 {
+  background-image: url("./img/groups/judge/card-closed-5.svg");
+}
+
+.wrapper-judge .card__closed.card-6 {
+  background-image: url("./img/groups/judge/card-closed-6.svg");
+}
+
+.wrapper-judge .card__closed.card-7 {
+  background-image: url("./img/groups/judge/card-closed-7.svg");
+}
+
+.wrapper-judge .card__closed.card-8 {
+  background-image: url("./img/groups/judge/card-closed-8.svg");
+}
+
+
+
+// html, 
+// body {
+//   // position: relative;
+//   width: 100%;
+//   margin: 0;
+//   // min-width: 320px;
+//   // font-size: 10px;
+//   // font-family: "Georgia";
+//   // scroll-behavior: smooth;
+//   // overflow-x: hidden;
+//   background-color: $color-light;
+// }
+
+
+// .main {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .group {
+//   display: flex;
+//   flex-wrap: wrap;
+//   height: 100vh;
+//   width: 100%;
+// }
+
+// .title {
+//   width: 100%;
+//   text-align: center;
+//   font-family: "Raydis";
+// }
+
+// .entrants,
+// .judge {
+//   flex-grow: 1;
+//   height: 90%;
+// }
+
+// .entrants {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .subgroup {
+//   flex-grow: 1;
+//   height: 90%;
+// }
+
+// .wrapper-name {
+//   margin: 15px;
+//   padding: 15px;
+//   background-color: rgba($color: #fffafa, $alpha: 0.4);
+//   color: transparent;
+//   cursor: pointer;
+// }
+
+// .text-name {
+//   margin: 0;
+//   font-family: "Raydis";
+//   font-size: 28px;
+// }
+
+// .wrapper-name:nth-child(odd) {
+//   text-align: right;
+// }
+
+// .wrapper-name.open {
+//   color: black;
+//   background-color: $color-light;
+//   animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+//   cursor: auto;
+// }
+
+// .button {
+//   margin: auto;
+//   position: absolute;
+//   height: 30px;
+//   width: 100px;
+//   top: 0; left: 0; bottom: 0; right: 0;
+//   cursor: pointer;
+// }
+
+// .button.hide {
+//   display: none;
+// }
+
+// .loader {
+//   display: none;
+//   width: 64px;
+//   height: 64px;
+//   position: absolute;
+//   margin: auto;
+//   top: 0; left: 0; bottom: 0; right: 0;
+//   animation: rotate 1.5s ease-in infinite alternate;
+// }
+
+// .loader.open {
+//   display: block;
+// }
+
+// .loader::before {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   color: #FF3D00;
+//   background: currentColor;
+//   width: 64px;
+//   height: 32px;
+//   border-radius: 0 0 50px 50px;
+// }
+// .loader::after {
+//   content: '';
+//   position: absolute;
+//   left: 50%;
+//   top: 10%;
+//   background: #FFF;
+//   width: 8px;
+//   height: 64px;
+//   animation: rotate 1.2s linear infinite alternate-reverse;
+// }
+
+// @keyframes rotate {
+//   100% { transform: rotate(360deg)}
+// }
