@@ -39,6 +39,8 @@ html,
 body {
   margin: 0;
   background-color: $color-background-light;
+  scroll-snap-type: y mandatory;
+  // overflow-y: scroll;
   // font-size: 10px;
 }
 
@@ -46,6 +48,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .list__entrants,
@@ -118,6 +122,8 @@ body {
 //группы
 
 .section_groups {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -133,13 +139,13 @@ body {
 }
 
 .section_entrants {
-  margin: 55px 100px 65px 100px;
+  margin: 55px 75px 65px 65px;
   display: flex;
   flex-grow: 1;
 }
 
 .section_judge {
-  padding: 15px 100px 65px 100px;
+  padding: 15px 65px 65px 75px;
   position: relative;
   background-color: $color-background-dark;
   flex-grow: 1;
@@ -386,42 +392,51 @@ body {
 //   display: none;
 // }
 
-// .loader {
-//   display: none;
-//   width: 64px;
-//   height: 64px;
-//   position: absolute;
-//   margin: auto;
-//   top: 0; left: 0; bottom: 0; right: 0;
-//   animation: rotate 1.5s ease-in infinite alternate;
-// }
+.wrapper-loader {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+}
 
-// .loader.open {
-//   display: block;
-// }
+.loader {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+  animation: rotate 1.5s ease-in infinite alternate;
+}
 
-// .loader::before {
-//   content: '';
-//   position: absolute;
-//   left: 0;
-//   bottom: 0;
-//   color: #FF3D00;
-//   background: currentColor;
-//   width: 64px;
-//   height: 32px;
-//   border-radius: 0 0 50px 50px;
-// }
-// .loader::after {
-//   content: '';
-//   position: absolute;
-//   left: 50%;
-//   top: 10%;
-//   background: #FFF;
-//   width: 8px;
-//   height: 64px;
-//   animation: rotate 1.2s linear infinite alternate-reverse;
-// }
+.wrapper-loader.open {
+  display: block;
+}
 
-// @keyframes rotate {
-//   100% { transform: rotate(360deg)}
-// }
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #FF3D00;
+  background: currentColor;
+  width: 64px;
+  height: 32px;
+  border-radius: 0 0 50px 50px;
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  background: #FFF;
+  width: 8px;
+  height: 64px;
+  animation: rotate 1.2s linear infinite alternate-reverse;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg)}
+}

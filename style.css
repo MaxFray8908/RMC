@@ -14,12 +14,15 @@ html,
 body {
   margin: 0;
   background-color: #f8ebd9;
+  scroll-snap-type: y mandatory;
 }
 
 .section_listPeople {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .list__entrants,
@@ -89,6 +92,8 @@ body {
 }
 
 .section_groups {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -104,13 +109,13 @@ body {
 }
 
 .section_entrants {
-  margin: 55px 100px 65px 100px;
+  margin: 55px 75px 65px 65px;
   display: flex;
   flex-grow: 1;
 }
 
 .section_judge {
-  padding: 15px 100px 65px 100px;
+  padding: 15px 65px 65px 75px;
   position: relative;
   background-color: #1d1842;
   flex-grow: 1;
@@ -267,4 +272,61 @@ body {
 
 .wrapper-judge .card__closed.card-8 {
   background-image: url("./img/groups/judge/card-closed-8.svg");
+}
+
+.wrapper-loader {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loader {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation: rotate 1.5s ease-in infinite alternate;
+}
+
+.wrapper-loader.open {
+  display: block;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #FF3D00;
+  background: currentColor;
+  width: 64px;
+  height: 32px;
+  border-radius: 0 0 50px 50px;
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  background: #FFF;
+  width: 8px;
+  height: 64px;
+  animation: rotate 1.2s linear infinite alternate-reverse;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -173,14 +173,23 @@ function start(countJudge, countEntrants) {
 
   testRun();
 
-  console.log(group_1);
-  console.log(group_2);
-  console.log(group_3);
-  console.log(group_4);
-  console.log(group_5);
-  console.log(group_6);
+  // console.log(group_1);
+  // console.log(group_2);
+  // console.log(group_3);
+  // console.log(group_4);
+  // console.log(group_5);
+  // console.log(group_6);
 
   addClosedCard();
+
+  const dataUri = "data:text/json;charset=utf8," + encodeURIComponent(JSON.stringify(arrayNameGroup));
+  const anchorElement = document.createElement('a');
+  anchorElement.href = dataUri;
+  anchorElement.download = `Groups.json`;
+  document.body.appendChild(anchorElement);
+  anchorElement.click();
+  document.body.removeChild(anchorElement);
+  // console.log(dataUri)
 }
 
 export {start}
