@@ -17,6 +17,10 @@ body {
   scroll-snap-type: y mandatory;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 .section_listPeople {
   height: 100vh;
   display: flex;

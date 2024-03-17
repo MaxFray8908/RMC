@@ -40,8 +40,13 @@ body {
   margin: 0;
   background-color: $color-background-light;
   scroll-snap-type: y mandatory;
+  // overflow:  hidden;
   // overflow-y: scroll;
   // font-size: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 .section_listPeople {
