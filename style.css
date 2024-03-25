@@ -91,8 +91,8 @@ body {
 
 .card-entrants.delete,
 .card-judge.delete {
-  background-color: #403F3F;
-  color: #a6a6a6;
+  background-color: #646464;
+  color: #414141;
 }
 
 .section_groups {
@@ -113,13 +113,13 @@ body {
 }
 
 .section_entrants {
-  margin: 55px 75px 65px 65px;
+  margin: 55px 115px 65px 85px;
   display: flex;
   flex-grow: 1;
 }
 
 .section_judge {
-  padding: 15px 65px 65px 75px;
+  padding: 15px 85px 65px 75px;
   position: relative;
   background-color: #1d1842;
   flex-grow: 1;
@@ -153,6 +153,7 @@ body {
 
 .wrapper-judge {
   padding-top: 10px;
+  padding-left: 40px;
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
