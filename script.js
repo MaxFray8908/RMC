@@ -39,7 +39,11 @@ function deleteCard (event) {
       else {
         card.classList.add("delete");
         countEntrants--;
-      }
+        
+        let index = entrantsData.findIndex(item => item.kname === event.target.innerHTML);
+        entrantsData.splice(index, 1);
+      };
+      
     }
     else if (card.classList.contains("card-judge")) {
       if (card.classList.contains("delete")) {
@@ -49,6 +53,9 @@ function deleteCard (event) {
       else {
         countJudge--;
         card.classList.add("delete");
+
+        let index = judgeData.findIndex(item => item.kname === event.target.innerHTML);
+        judgeData.splice(index, 1);
       }
     }
   }
