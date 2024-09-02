@@ -1,0 +1,100 @@
+@font-face {
+	font-family: 'Peace Sans';
+	src: url('../fonts/peace_sans.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/peace_sans.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/peace_sans.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/peace_sans.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/peace_sans.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/peace_sans.svg#peace_sans') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+html, body {
+  margin: 0;
+}
+
+.wrapper-cards {
+  height: 70vh;
+  width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+	grid-gap: 2px;
+	grid-auto-flow: dense;
+  align-content: center;
+  justify-content: center;
+}
+
+.card:nth-child(odd) {
+  background: #3BC241;
+}
+.card:nth-child(even) {
+  background: #DA251C;
+}
+.card:nth-child(3n) {
+  background: #2F4086;
+}
+.card:nth-child(11n) {
+  background: #DA251C;
+}
+
+.card { min-height: 50px; background-position: 50% 50%; display:flex; justify-content: center; align-items: center; font-size: 25px; color: aliceblue;}
+.span-2 { grid-column-end: span 2; grid-row-end: span 2; min-height: 100px; font-size: 45px;}
+.span-3 { grid-column-end: span 3; grid-row-end: span 3; min-height: 150px; font-size: 65px;}
+.span-4 { grid-column-end: span 1; grid-row-end: span 2; font-size: 25px;}
+.span-5 { grid-column-end: span 2; grid-row-end: span 1; font-size: 25px;}
+
+// .card-open {
+//   display: flex;
+// }
+
+.card.card-delete {
+  background-color: transparent;
+  color: transparent;
+  // background-color: #A5A5A5;
+  // color: #293133;
+}
+
+.span-number {
+  font-family: 'Peace Sans';
+  // color: aliceblue;
+}
+
+.wrapper-progress {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animated-progress {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 20px 10px;
+  border: 1px solid #2F4086;
+  overflow: hidden;
+  position: relative;
+}
+
+.animated-progress span {
+  height: 100%;
+  display: block;
+  width: 0;
+  // color: rgb(255, 251, 251);
+  line-height: 30px;
+  position: absolute;
+  text-align: end;
+  // padding-right: 5px;
+  background-color: #2F4086;
+}
+
+.button-start {
+  height: 50px;
+  width: 150px;
+  background-color:#DA251C;
+  font-family: 'Peace Sans';
+  color: aliceblue;
+  font-size: 20px;
+  border: none;
+}
