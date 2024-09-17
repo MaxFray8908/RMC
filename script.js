@@ -1,4 +1,5 @@
 let wrapperCard = document.querySelector('.wrapper-cards');
+let countPerson;
 
 fetch('test.json')
   .then(response => response.json())
@@ -8,11 +9,15 @@ fetch('test.json')
 });
 
 function addCards(data) {
+  countPerson = data.length;
+  
+  if (countPerson > 100) {
+    document.querySelector('.wrapper-cards').style.width = '1800px';
+  }
+
   for(let item of data) {
-    // console.log(jsonData);
 
     let i = Number(item[0][1]);
-    // console.log(i);
     let card = "";
 
     if (i % 2 === 0) {
@@ -47,16 +52,16 @@ function addCards(data) {
 }
 
 let numberWinner;
-let countPerson;
+
 
 function calcWinner(data) {
-  countPerson = data.length;
+  
   let randomNumber = getRandomInt(countPerson);
   numberWinner = data[randomNumber][0][1];
   // console.log(countPerson);
   // console.log(randomNumber);
-  // console.log("numberWinner");
-  // console.log(numberWinner);
+  console.log("numberWinner");
+  console.log(numberWinner);
 }
 
 function getRandomInt(max) {
