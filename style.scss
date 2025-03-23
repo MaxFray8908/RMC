@@ -80,13 +80,14 @@ body {
 .section_listPeople__title{
   height: 100%;
   margin: auto 5px;
-  padding: 15px;
+  padding: 0 15px;
   text-align: center;
   writing-mode: vertical-rl;
   text-orientation: upright;
   text-transform: uppercase;
   font-family: "Benzin-ExtraBold";
-  font-size: 65px;
+  font-size: 2.7vw;
+  // font-size: 65px;
   color: #FFF9F7;
 }
 
@@ -147,19 +148,20 @@ body {
   flex-grow: 1;
   padding: 5px;
   font-family: "Inter";
-  font-size: 0.9vw;
+  font-size: 0.8vw;
   font-weight: 900;
   text-transform: uppercase;
+  
 }
 
 .card-entrants {
-  background-color: $color-background-dark;
-  color: $color-background-light;
+  background-color: #8A2E3B;
+  color: #FFF9F7;
 }
 
 .card-judge {
-  background-color: $color-background-light;
-  color: $color-background-dark;
+  background-color: #FFF9F7;
+  color: #8A2E3B;
 }
 
 .card__text {
@@ -193,30 +195,74 @@ body {
 }
 
 .wrapper-section {
+  position: relative;
   display: flex;
   flex-grow: 1;
 }
 
 .section_entrants {
-  margin: 55px 135px 65px 125px;
+  width: 60vw;
+  padding: 5vh;
   display: flex;
-  flex-grow: 1;
+  justify-content: center;
+  background-color: #D4435E;
 }
 
 .section_judge {
-  padding: 15px 125px 65px 95px;
+  width: 40vw;
+  padding: 5vh;
   position: relative;
-  background-color: $color-background-dark;
-  flex-grow: 1;
+  background-color: #1A4B50;
   display: flex;
   flex-direction: column;
 }
 
-.section_groups__img-mirror {
+.div-border {
   position: absolute;
-  left: 0;
-  transform: translateX(-50%);
-  // height: 100%;
+  top: -2vh;
+  width: 100vw;
+  border-top: 7px dashed #CA8675;
+  // background-color: #8A2E3B;
+  transform:rotate(-2deg);
+}
+
+.title-2 {
+  // width: 100vw;
+  margin: 0;
+  padding: 5vh 0;
+  text-transform: uppercase;
+  font-family: "Benzin-ExtraBold";
+  font-size: 4.5vw;
+  text-align: center;
+  color: #FFF9F7;
+  background-color: #8A2E3B;
+}
+
+.title-3 {
+  width: 400px;
+  height: 80px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #59A8B3;
+  text-transform: uppercase;
+  font-family: "Benzin-ExtraBold";
+  font-size: 1.5vw;
+  color: #FFF9F7;
+}
+
+.title-4 {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Benzin-ExtraBold";
+  font-size: 3.5vw;
+  color: #FFF9F7;
+}
+
+.section-separator_groups {
+  transform: translateY(-5vh);
+  justify-content: space-around;
 }
 
 .wrapper_subgroup-1,
@@ -228,13 +274,13 @@ body {
 
 .wrapper_subgroup-1 {
   padding: 0 40px 20px 0;
-  border-bottom: 4px solid $color-background-dark;
-  border-right: 4px solid $color-background-dark;
+  border-bottom: 7px dashed #CA8675;
+  border-right: 7px dashed #CA8675;
 }
 
 .wrapper_subgroup-2 {
   padding: 20px 0 0 40px;
-  border-top: 4px solid $color-background-dark;
+  border-top: 7px dashed #CA8675;
 }
 
 .wrapper-judge {
@@ -244,7 +290,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  row-gap: 0;
+  row-gap: 20px;
   align-content: space-between;
 }
 
@@ -259,9 +305,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-background-dark;
-  color: $color-background-light;
-  font-family: "Inter-Bold";
+  background-color: #8A2E3B;
+  color: #FFF9F7;
+  font-family: "Inter";
   font-size: 0.9vw;
   font-weight: 900;
   text-transform: uppercase;
@@ -272,11 +318,11 @@ body {
 }
 
 .section_groups .card-judge {
-  height: 125px;
-  width: 285px;
-  flex-grow: 0;
-  background-color: $color-background-light;
-  color: $color-background-dark;
+  width: 30%;
+  max-width: 300px;
+  flex-grow: 1;
+  background-color: #FFF9F7;
+  color: #D4435E;
   font-family: "Inter";
   font-size: 1.2vw;
   font-weight: 900;
@@ -292,165 +338,84 @@ body {
   cursor: pointer;
 }
 
+.card-text {
+  margin: 0;
+  padding: 10px 0;
+}
+
 .wrapper_subgroup-1 .card__closed.card-1 {
-  background-image: url("./img/groups/subgroup/card__closed-1.svg");
+  background-image: url("./img/groups/subgroup/card__closed-1.png");
 }
 
 .wrapper_subgroup-1 .card__closed.card-2 {
-  background-image: url("./img/groups/subgroup/card__closed-2.svg");
+  background-image: url("./img/groups/subgroup/card__closed-2.png");
 }
 
 .wrapper_subgroup-1 .card__closed.card-3 {
-  background-image: url("./img/groups/subgroup/card__closed-3.svg");
+  background-image: url("./img/groups/subgroup/card__closed-3.png");
 }
 
 .wrapper_subgroup-1 .card__closed.card-4 {
-  background-image: url("./img/groups/subgroup/card__closed-4.svg");
+  background-image: url("./img/groups/subgroup/card__closed-4.png");
 }
 
 .wrapper_subgroup-1 .card__closed.card-5 {
-  background-image: url("./img/groups/subgroup/card__closed-5.svg");
+  background-image: url("./img/groups/subgroup/card__closed-5.png");
 }
 
 .wrapper_subgroup-2 .card__closed.card-1 {
-  background-image: url("./img/groups/subgroup/card__closed-6.svg");
+  background-image: url("./img/groups/subgroup/card__closed-6.png");
 }
 
 .wrapper_subgroup-2 .card__closed.card-2 {
-  background-image: url("./img/groups/subgroup/card__closed-7.svg");
+  background-image: url("./img/groups/subgroup/card__closed-7.png");
 }
 
 .wrapper_subgroup-2 .card__closed.card-3 {
-  background-image: url("./img/groups/subgroup/card__closed-8.svg");
+  background-image: url("./img/groups/subgroup/card__closed-8.png");
 }
 
 .wrapper_subgroup-2 .card__closed.card-4 {
-  background-image: url("./img/groups/subgroup/card__closed-9.svg");
+  background-image: url("./img/groups/subgroup/card__closed-9.png");
 }
 
 .wrapper_subgroup-2 .card__closed.card-5 {
-  background-image: url("./img/groups/subgroup/card__closed-10.svg");
+  background-image: url("./img/groups/subgroup/card__closed-10.png");
 }
 
 .wrapper-judge .card__closed.card-1 {
-  background-image: url("./img/groups/judge/card-closed-1.svg");
+  background-image: url("./img/groups/judge/card-closed-1.png");
 }
 
 .wrapper-judge .card__closed.card-2 {
-  background-image: url("./img/groups/judge/card-closed-2.svg");
+  background-image: url("./img/groups/judge/card-closed-2.png");
 }
 
 .wrapper-judge .card__closed.card-3 {
-  background-image: url("./img/groups/judge/card-closed-3.svg");
+  background-image: url("./img/groups/judge/card-closed-3.png");
 }
 
 .wrapper-judge .card__closed.card-4 {
-  background-image: url("./img/groups/judge/card-closed-4.svg");
+  background-image: url("./img/groups/judge/card-closed-4.png");
 }
 
 .wrapper-judge .card__closed.card-5 {
-  background-image: url("./img/groups/judge/card-closed-5.svg");
+  background-image: url("./img/groups/judge/card-closed-5.png");
 }
 
 .wrapper-judge .card__closed.card-6 {
-  background-image: url("./img/groups/judge/card-closed-6.svg");
+  background-image: url("./img/groups/judge/card-closed-6.png");
 }
 
 .wrapper-judge .card__closed.card-7 {
-  background-image: url("./img/groups/judge/card-closed-7.svg");
+  background-image: url("./img/groups/judge/card-closed-7.png");
 }
 
 .wrapper-judge .card__closed.card-8 {
-  background-image: url("./img/groups/judge/card-closed-8.svg");
+  background-image: url("./img/groups/judge/card-closed-8.png");
 }
 
 
-
-// html, 
-// body {
-//   // position: relative;
-//   width: 100%;
-//   margin: 0;
-//   // min-width: 320px;
-//   // font-size: 10px;
-//   // font-family: "Georgia";
-//   // scroll-behavior: smooth;
-//   // overflow-x: hidden;
-//   background-color: $color-light;
-// }
-
-
-// .main {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .group {
-//   display: flex;
-//   flex-wrap: wrap;
-//   height: 100vh;
-//   width: 100%;
-// }
-
-// .title {
-//   width: 100%;
-//   text-align: center;
-//   font-family: "Raydis";
-// }
-
-// .entrants,
-// .judge {
-//   flex-grow: 1;
-//   height: 90%;
-// }
-
-// .entrants {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-
-// .subgroup {
-//   flex-grow: 1;
-//   height: 90%;
-// }
-
-// .wrapper-name {
-//   margin: 15px;
-//   padding: 15px;
-//   background-color: rgba($color: #fffafa, $alpha: 0.4);
-//   color: transparent;
-//   cursor: pointer;
-// }
-
-// .text-name {
-//   margin: 0;
-//   font-family: "Raydis";
-//   font-size: 28px;
-// }
-
-// .wrapper-name:nth-child(odd) {
-//   text-align: right;
-// }
-
-// .wrapper-name.open {
-//   color: black;
-//   background-color: $color-light;
-//   animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
-//   cursor: auto;
-// }
-
-// .button {
-//   margin: auto;
-//   position: absolute;
-//   height: 30px;
-//   width: 100px;
-//   top: 0; left: 0; bottom: 0; right: 0;
-//   cursor: pointer;
-// }
-
-// .button.hide {
-//   display: none;
-// }
 
 .wrapper-loader {
   display: none;
@@ -479,7 +444,7 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
-  color: #FF3D00;
+  color: #D4435E;
   background: currentColor;
   width: 64px;
   height: 32px;
@@ -491,7 +456,7 @@ body {
   position: absolute;
   left: 50%;
   top: 10%;
-  background: #FFF;
+  background: #59A8B3;
   width: 8px;
   height: 64px;
   animation: rotate 1.2s linear infinite alternate-reverse;
