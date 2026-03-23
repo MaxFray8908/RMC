@@ -1,8 +1,8 @@
 import {entrantsData, judgeData} from "./data.js";
 import {start} from "./algoritm.js";
 
-let countJudge = 45;
-let countEntrants = 58;
+let countJudge = 37;
+let countEntrants = 63;
 
 function fillSectionListPeople () {
   let sectionListEntrants = document.querySelector(".list__entrants");
@@ -21,6 +21,17 @@ function fillSectionListPeople () {
                 </div>`
     sectionListJudge.insertAdjacentHTML("beforeend", card);
   }
+
+  let card_entrants_empty = `<div class="card-entrants card_empty">
+                  <p class="card__text"></p>
+                </div>`
+  sectionListEntrants.insertAdjacentHTML("beforeend", card_entrants_empty);
+
+  let card_judge_empty = `<div class="card-judge card_empty">
+                  <p class="card__text"></p>
+                </div>`
+  sectionListJudge.insertAdjacentHTML("beforeend", card_judge_empty);
+
 }
 fillSectionListPeople();
 
